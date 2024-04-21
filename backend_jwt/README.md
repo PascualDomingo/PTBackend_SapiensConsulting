@@ -2,14 +2,14 @@
 
 ### Documentación técnica
 
-#### LIBRERIAS INSTALADAS
-* php artisan make:model nombremodelo --all  //para crear modelo, controlador, etc. crea todo si se agrega el --all
-* php artisan migrate  //comando para crear tabla en la base de datos 
-* composer require tymon/jwt-auth  //instalacion de composer para jwt
-* php artisan vendor:publish --provider="Tymon\JWTAuth\Providers\LaravelServiceProvider" //publicar jwt
-* php artisan jwt:secret //crear llave secreta, para generar uno, cada que se crea un token se mescla con la llave secreta
-* composer require guzzlehttp/guzzle //integración de guzzle en el proyecto
-* php artisan make:controller NombreDelControlador  //crear un nuevo controlador
+    {
+        "php": "^8.1",
+        "guzzlehttp/guzzle": "^7.8",
+        "laravel/framework": "^10.10",
+        "laravel/sanctum": "^3.3",
+        "laravel/tinker": "^2.8",
+        "tymon/jwt-auth": "^2.1"
+    }
 
 
 ### PARÁMETROS:
@@ -252,3 +252,13 @@
         "to": 3,
         "total": 3
     }
+
+
+#### LIBRERIAS INSTALADAS
+* php artisan make:model nombremodelo --all  //para crear modelo, controlador, etc. crea todo si se agrega el --all
+* php artisan migrate  //comando para crear tabla en la base de datos 
+* composer require tymon/jwt-auth  //instalacion de composer para jwt
+* php artisan vendor:publish --provider="Tymon\JWTAuth\Providers\LaravelServiceProvider" //publicar jwt
+* php artisan jwt:secret //crear llave secreta, para generar uno, cada que se crea un token se mescla con la llave secreta
+* composer require guzzlehttp/guzzle //integración de guzzle en el proyecto
+* php artisan make:controller NombreDelControlador  //crear un nuevo controlador

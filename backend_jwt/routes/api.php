@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MovieController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -35,3 +37,9 @@ Route::group([
     Route::post('me', 'App\Http\Controllers\AuthController@me');
     Route::post('register', 'App\Http\Controllers\AuthController@register');
 });
+
+
+Route::get('/movies/top', [MovieController::class, 'getLatestMovies']);
+Route::get('/movies/buscar/nombre', [MovieController::class, 'searchMovies']);
+Route::get('/movies/favorito', [MovieController::class, 'marcarPeliFavorita']);
+Route::get('/movies/lista/favorito', [MovieController::class, 'obtenerPeliculasFavoritas']);

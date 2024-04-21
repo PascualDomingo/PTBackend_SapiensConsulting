@@ -78,6 +78,7 @@
 
 ## Lista de las últimas películas con paginación
 ##### Método: GET
+##### Método: Authorization: Bearer Toekn
 ##### Ruta: http://127.0.0.1:8000/api/movies/top
 
 ###### Respuesta:
@@ -115,9 +116,15 @@
         }
     }
 
+###### Error, si no está autenticado
+    {
+        "error": "Unauthenticated."
+    }
+
 
 ## API para buscar una o muchas peliculas filtrando por nombre
 ##### Método: GET
+##### Método: Authorization: Bearer Toekn
 ##### Ruta: http://127.0.0.1:8000/api/movies/buscar/nombre?nombre=titanic II
 ###### Respuesta:
     {
@@ -143,57 +150,20 @@
                 "video": false,
                 "vote_average": 4.993,
                 "vote_count": 403
-            },
-            {
-                "adult": false,
-                "backdrop_path": "/bnuBhHLzsRapDWheh9kwNn6qZnp.jpg",
-                "genre_ids": [
-                    27,
-                    878,
-                    28
-                ],
-                "id": 340382,
-                "original_language": "ja",
-                "original_title": "進撃の巨人 ATTACK ON TITAN エンド オブ ザ ワールド",
-                "overview": "Eren Yeager leaves to restore a break in the wall destroyed by a Titan. He comes under attack by the Titans and is cornered. Shikishima comes to his aid. The titans never stops attacking.  Eren is now injured and tries to protect Armin, but is swallowed by a titan. A Titan with black hair appears and begins to expel the other titans.",
-                "popularity": 26.453,
-                "poster_path": "/khTl77Kvwb7emwcluvwKRA7MkSs.jpg",
-                "release_date": "2015-09-01",
-                "title": "Attack on Titan II: End of the World",
-                "video": false,
-                "vote_average": 6.033,
-                "vote_count": 316
-            },
-            {
-                "adult": false,
-                "backdrop_path": "/gSTzDY77M2J8lfffS37Wj3GDcVg.jpg",
-                "genre_ids": [
-                    16,
-                    10770,
-                    35,
-                    12,
-                    80
-                ],
-                "id": 51943,
-                "original_language": "ja",
-                "original_title": "ルパン三世 燃えよ斬鉄剣",
-                "overview": "The Lupin gang is once again dragged onto a wild treasure hunt! This time, the objective is a mysterious, small dragon statue that even  Goemon's steel-rendering blade Zantetsuken cannot cut. The artifact,  which once eluded even Lupin the Third's esteemed grandfather, rests deep undersea inside the infamous Titanic, and is the key to unlocking the mystery of Zantetsuken's almighty strength. A wealthy gangster,  Lupin, and Goemon all want the statue for themselves!",
-                "popularity": 12.458,
-                "poster_path": "/ywBnexTGaiSmezhd48LcxMTYXZJ.jpg",
-                "release_date": "1994-07-29",
-                "title": "Lupin the Third: Dragon of Doom",
-                "video": false,
-                "vote_average": 6.7,
-                "vote_count": 44
-            }
+            }, ...
         ],
         "total_pages": 1,
         "total_results": 3
     }
 
+###### Error, si no está autenticado
+    {
+        "error": "Unauthenticated."
+    }
 
 ## API para marcar la pelicula como favorita
 ##### Método: GET
+##### Método: Authorization: Bearer Toekn
 ##### Ruta: http://127.0.0.1:8000/api/movies/favorito?id_pelicula=693134
 ###### Respuesta:
     {
@@ -212,6 +182,7 @@
 
 ## API para traer listado de peliculas marcadas como favoritas,
 ##### Método: GET
+##### Método: Authorization: Bearer Toekn
 ##### Ruta: http://127.0.0.1:8000/api/movies/lista/favorito
 ###### Respuesta:
     {
@@ -242,4 +213,42 @@
             "total_pages": 1,
             "total_results": 6
         }
+    }
+
+
+
+##  logs de los movimientos del login de usuarios
+##### Método: GET
+##### Método: Authorization: Bearer Toekn
+##### Ruta: http://127.0.0.1:8000/api/logs
+###### Respuesta:
+    {
+        "current_page": 1,
+        "data": [
+            {
+                "id": 1,
+                "user_id": "0",
+                "tipo_evento": "login_success",
+                "descripcion": "Usuario autenticado correctamente",
+                "created_at": "2024-04-21T20:41:12.000000Z",
+                "updated_at": "2024-04-21T20:41:12.000000Z"
+            },..
+        ],
+        "first_page_url": "http://127.0.0.1:8000/api/logs?page=1",
+        "from": 1,
+        "last_page": 1,
+        "last_page_url": "http://127.0.0.1:8000/api/logs?page=1",
+        "links": [
+            {
+                "url": null,
+                "label": "&laquo; Previous",
+                "active": false
+            },..
+        ],
+        "next_page_url": null,
+        "path": "http://127.0.0.1:8000/api/logs",
+        "per_page": 15,
+        "prev_page_url": null,
+        "to": 3,
+        "total": 3
     }

@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MovieController;
+use App\Http\Controllers\LogController;
 
 
 /*
@@ -31,7 +32,8 @@ Route::group([
     'prefix' => 'auth'
 
 ], function ($router) {
-    Route::post('login', 'App\Http\Controllers\AuthController@login');
+    //Route::post('login', 'App\Http\Controllers\AuthController@login');
+    Route::post('login', [ 'as' => 'login', 'uses' => 'App\Http\Controllers\AuthController@login']);
     Route::post('logout', 'App\Http\Controllers\AuthController@logout');
     Route::post('refresh', 'App\Http\Controllers\AuthController@refresh');
     Route::post('me', 'App\Http\Controllers\AuthController@me');
@@ -39,7 +41,15 @@ Route::group([
 });
 
 
-Route::get('/movies/top', [MovieController::class, 'getLatestMovies']);
-Route::get('/movies/buscar/nombre', [MovieController::class, 'searchMovies']);
-Route::get('/movies/favorito', [MovieController::class, 'marcarPeliFavorita']);
-Route::get('/movies/lista/favorito', [MovieController::class, 'obtenerPeliculasFavoritas']);
+//Route::get('/movies/top', [MovieController::class, 'getLatestMovies']);
+//Route::get('/movies/buscar/nombre', [MovieController::class, 'searchMovies']);
+//Route::get('/movies/favorito', [MovieController::class, 'marcarPeliFavorita']);
+//Route::get('/movies/lista/favorito', [MovieController::class, 'obtenerPeliculasFavoritas']);
+
+Route::middleware('auth:api')->group(function () {
+    Route::get('/movies/top', [MovieController::class, 'getLatestMovies']);
+    Route::get('/movies/buscar/nombre', [MovieController::class, 'searchMovies']);
+    Route::get('/movies/favorito', [MovieController::class, 'marcarPeliFavorita']);
+    Route::get('/movies/lista/favorito', [MovieController::class, 'obtenerPeliculasFavoritas']);
+    Route::get('/logs', [LogController::class, 'getUserLoginLogs']);
+});

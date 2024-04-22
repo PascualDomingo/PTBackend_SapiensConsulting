@@ -11,7 +11,7 @@
         "tymon/jwt-auth": "^2.1"
     }
 
-
+php artisan serve
 ### PARÁMETROS:
 
 ---
@@ -262,3 +262,5 @@
 * php artisan jwt:secret //crear llave secreta, para generar uno, cada que se crea un token se mescla con la llave secreta
 * composer require guzzlehttp/guzzle //integración de guzzle en el proyecto
 * php artisan make:controller NombreDelControlador  //crear un nuevo controlador
+* php artisan migrate:fresh --seed
+* php artisan serve --host 0.0.0.0 //iniciar serve en MV GCP

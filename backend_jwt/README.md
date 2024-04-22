@@ -16,6 +16,12 @@ php artisan serve
 
 ---
 
+## prueba
+##### Método: GET
+##### Ruta: http://34.16.171.107:8000/api/test
+###### respuesta:
+    hola mundo v2
+
 ## Registro de usuarios
 ##### Método: POST
 ##### Ruta: http://34.16.171.107:8000/api/usuario

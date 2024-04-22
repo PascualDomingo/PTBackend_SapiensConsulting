@@ -18,7 +18,7 @@ php artisan serve
 
 ## Registro de usuarios
 ##### Método: POST
-##### Ruta: http://127.0.0.1:8000/api/usuario
+##### Ruta: http://34.16.171.107:8000/api/usuario
 ###### Body:
     {
         "name": "pdd",
@@ -57,7 +57,7 @@ php artisan serve
 
 ## Login
 ##### Método: POST
-##### Ruta: http://127.0.0.1:8000/api/auth/login
+##### Ruta: http://34.16.171.107:8000/api/auth/login
 ###### Body:
     {
         "email": "pdd@gmail.com",
@@ -79,7 +79,7 @@ php artisan serve
 ## Lista de las últimas películas con paginación
 ##### Método: GET
 ##### Método: Authorization: Bearer Toekn
-##### Ruta: http://127.0.0.1:8000/api/movies/top
+##### Ruta: http://34.16.171.107:8000/api/movies/top
 
 ###### Respuesta:
     {
@@ -125,7 +125,7 @@ php artisan serve
 ## API para buscar una o muchas peliculas filtrando por nombre
 ##### Método: GET
 ##### Método: Authorization: Bearer Toekn
-##### Ruta: http://127.0.0.1:8000/api/movies/buscar/nombre?nombre=titanic II
+##### Ruta: http://34.16.171.107:8000/api/movies/buscar/nombre?nombre=titanic II
 ###### Respuesta:
     {
         "page": 1,
@@ -164,7 +164,7 @@ php artisan serve
 ## API para marcar la pelicula como favorita
 ##### Método: GET
 ##### Método: Authorization: Bearer Toekn
-##### Ruta: http://127.0.0.1:8000/api/movies/favorito?id_pelicula=693134
+##### Ruta: http://34.16.171.107:8000/api/movies/favorito?id_pelicula=693134
 ###### Respuesta:
     {
         "status": "success",
@@ -183,7 +183,7 @@ php artisan serve
 ## API para traer listado de peliculas marcadas como favoritas,
 ##### Método: GET
 ##### Método: Authorization: Bearer Toekn
-##### Ruta: http://127.0.0.1:8000/api/movies/lista/favorito
+##### Ruta: http://34.16.171.107:8000/api/movies/lista/favorito
 ###### Respuesta:
     {
         "status": "success",
@@ -220,7 +220,7 @@ php artisan serve
 ##  logs de los movimientos del login de usuarios
 ##### Método: GET
 ##### Método: Authorization: Bearer Toekn
-##### Ruta: http://127.0.0.1:8000/api/logs
+##### Ruta: http://34.16.171.107:8000/api/logs
 ###### Respuesta:
     {
         "current_page": 1,
@@ -234,10 +234,10 @@ php artisan serve
                 "updated_at": "2024-04-21T20:41:12.000000Z"
             },..
         ],
-        "first_page_url": "http://127.0.0.1:8000/api/logs?page=1",
+        "first_page_url": "http://34.16.171.107:8000/api/logs?page=1",
         "from": 1,
         "last_page": 1,
-        "last_page_url": "http://127.0.0.1:8000/api/logs?page=1",
+        "last_page_url": "http://34.16.171.107:8000/api/logs?page=1",
         "links": [
             {
                 "url": null,
@@ -246,7 +246,7 @@ php artisan serve
             },..
         ],
         "next_page_url": null,
-        "path": "http://127.0.0.1:8000/api/logs",
+        "path": "http://34.16.171.107:8000/api/logs",
         "per_page": 15,
         "prev_page_url": null,
         "to": 3,
